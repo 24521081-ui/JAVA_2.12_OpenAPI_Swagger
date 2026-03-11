@@ -1,27 +1,29 @@
-package com.nhieuhanh.__demo;// thư mục chứa các lớp liên quan 
+package com.nhieuhanh.__demo;
 
-public class Student { 
-    private Long id;
-    private String name;
+public class Student {
+
+    private String id;
+    private String hoTen;
 
     public Student() {}
-
-    public Student(Long id, String name) {
+    public Student(String id, String hoTen) {
         this.id = id;
-        this.name = name;
+        this.hoTen = hoTen;
     }
 
-    public Long getId() { 
-      return id;
-    }
-    public void setId(Long id) { 
-      this.id = id; 
+    public String getId() {
+        return id;
     }
 
-    public String getName() { 
-      return name; 
+    public void setId(String id) {
+        this.id = id;
     }
-    public void setName(String name) { 
-      this.name = name; 
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
     }
 }

@@ -1,57 +1,48 @@
 package com.nhieuhanh.__demo;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.*;
+// import các annotation của Spring Boot để tạo REST API
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
-
-@Tag(name = "Students", description = "CRUD demo: GET, POST, PUT, DELETE (in-memory)")
+// đánh dấu đây là controller trả dữ liệu dạng JSON
 @RestController
-@RequestMapping("/students")
+
+// tất cả API trong class này đều bắt đầu bằng /student
+@RequestMapping("/student")
 public class StudentController {
 
-    private final Map<Long, Student> db = new ConcurrentHashMap<>();
-    private final AtomicLong idGen = new AtomicLong(0);
-
-    public StudentController() {
-        // dữ liệu mẫu để demo nhanh
-        create(new Student(null, "Minh"));
-        create(new Student(null, "Lan"));
-    }
-
-    @Operation(summary = "GET: Lấy danh sách sinh viên")
+    private Student student = new Student("24520001", "Nguyen Van Minh");
+    // truy cập: GET http://localhost:8080/student
     @GetMapping
-    public Collection<Student> getAll() {
-        return db.values();
+    public Student getStudent() {
+        return student;
     }
 
-    @Operation(summary = "POST: Tạo sinh viên mới")
+    // API POST: thêm sinh viên mới
+    // gửi JSON lên để thay dữ liệu hiện tại
     @PostMapping
-    public Student create(@RequestBody Student student) {
-        long id = idGen.incrementAndGet();
-        student.setId(id);
-        db.put(id, student);
-        return student;
+    public String createStudent(@RequestBody Student newStudent) {
+        student = newStudent;
+        return "Them sinh vien thanh cong";
     }
 
-    @Operation(summary = "PUT: Cập nhật sinh viên theo id")
-    @PutMapping("/{id}")
-    public Student update(@PathVariable Long id, @RequestBody Student student) {
-        if (!db.containsKey(id)) throw new NoSuchElementException("Student not found: " + id);
-        student.setId(id);
-        db.put(id, student);
-        return student;
+    // API PUT: cập nhật thông tin sinh viên
+    // gửi JSON mới để cập nhật lại dữ liệu
+    @PutMapping
+    public String updateStudent(@RequestBody Student updatedStudent) {
+        student = updatedStudent;
+        return "Cap nhat sinh vien thanh cong";
     }
 
-    @Operation(summary = "DELETE: Xóa sinh viên theo id")
-    @DeleteMapping("/{id}")
-    public Map<String, Object> delete(@PathVariable Long id) {
-        boolean existed = db.remove(id) != null;
-        return Map.of("deleted", existed, "id", id);
+    // API DELETE: xóa sinh viên hiện tại
+    @DeleteMapping
+    public String deleteStudent() {
+        student = null;
+        return "Xoa sinh vien thanh cong";
     }
 }
