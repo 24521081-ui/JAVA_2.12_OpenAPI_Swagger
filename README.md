@@ -77,3 +77,13 @@ Trong đó:
 - 3 file Java là phần code chính của project
 - `application.properties` dùng để cấu hình port và giao diện Swagger
 - `pom.xml` dùng để quản lý thư viện Spring Boot và Swagger
+
+## Tụi mình dùng
+- Java 17
+- Maven (check phiên bản trong pom.xml)
+- Kết nối Internet để tải dependency lần đầu
+## Cách chạy
+1. Mở project
+2. Đợi Maven tải dependency
+3. Chạy file DemoApplication.java
+4. Truy cập vào file các docs để test các links
