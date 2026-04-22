@@ -3,7 +3,7 @@
 ### 1. Giao diện Swagger UI
 `http://localhost:8081/swagger-ui.html`
 
-**Ý nghĩa:**
+**Mô tả:**
 - Đây là giao diện chính để xem tài liệu API trên trình duyệt.
 - Người dùng có thể xem danh sách các endpoint, tham số đầu vào, dữ liệu mẫu và thử trực tiếp từng API bằng nút **Try it out**.
 - Đây là phần thể hiện rõ nhất việc nhóm đã tích hợp **Swagger UI vào Java REST API**.
@@ -14,7 +14,7 @@
 ### 2. OpenAPI JSON
 `http://localhost:8081/v3/api-docs`
 
-**Ý nghĩa:**
+**Mô tả:**
 - Đây là dữ liệu mô tả toàn bộ API ở dạng JSON.
 - File JSON này được **tự động sinh ra từ code Java** mà nhóm đã viết, cụ thể là từ các controller, endpoint và annotation như `@GetMapping`, `@PostMapping`, `@Operation`, `@Parameter`,...
 - Swagger UI sử dụng chính dữ liệu JSON này để hiển thị giao diện tài liệu API trên trình duyệt.
@@ -32,7 +32,7 @@
 ### 3. Lấy toàn bộ danh sách sách
 `GET http://localhost:8081/books`
 
-**Ý nghĩa:**
+**Mô tả:**
 - Dùng để lấy tất cả sách hiện có trong hệ thống.
 - Đây là ví dụ cho phương thức `GET` trong REST API.
 - Endpoint này thuộc nhóm **Tra cứu sách**.
@@ -43,7 +43,7 @@
 ### 4. Tra cứu sách theo mã
 `GET http://localhost:8081/books/search?id=B001`
 
-**Ý nghĩa:**
+**Mô tả:**
 - Dùng để tra cứu sách theo mã sách.
 - Endpoint này minh họa cách sử dụng `@RequestParam` để nhận dữ liệu đầu vào từ URL.
 - Thuộc nhóm **Tra cứu sách**.
@@ -54,7 +54,7 @@
 ### 5. Tra cứu sách theo tên sách
 `GET http://localhost:8081/books/search?tenSach=Java`
 
-**Ý nghĩa:**
+**Mô tả:**
 - Dùng để tìm sách theo tên sách.
 - Minh họa chức năng tìm kiếm linh hoạt theo từ khóa.
 - Thuộc nhóm **Tra cứu sách**.
@@ -65,7 +65,7 @@
 ### 6. Tra cứu sách theo tác giả
 `GET http://localhost:8081/books/search?tacGia=Do%20Van%20Nhon`
 
-**Ý nghĩa:**
+**Mô tả:**
 - Dùng để tìm sách theo tên tác giả.
 - Minh họa thêm việc sử dụng parameter trong REST API.
 - Thuộc nhóm **Tra cứu sách**.
@@ -76,7 +76,7 @@
 ### 7. Tra cứu sách theo thể loại
 `GET http://localhost:8081/books/search?theLoai=Cong%20nghe`
 
-**Ý nghĩa:**
+**Mô tả:**
 - Dùng để lọc sách theo thể loại.
 - Minh họa việc sử dụng query parameter để lọc dữ liệu.
 - Thuộc nhóm **Tra cứu sách**.
@@ -87,7 +87,7 @@
 ### 8. Tra cứu kết hợp nhiều điều kiện
 `GET http://localhost:8081/books/search?tenSach=Java&theLoai=Cong%20nghe`
 
-**Ý nghĩa:**
+**Mô tả:**
 - Dùng để tra cứu sách theo nhiều điều kiện cùng lúc.
 - Thể hiện REST API có thể nhận nhiều parameter trong cùng một endpoint.
 - Thuộc nhóm **Tra cứu sách**.
