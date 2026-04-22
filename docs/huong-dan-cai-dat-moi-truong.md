@@ -22,7 +22,6 @@ Có thể dùng:
 - IntelliJ IDEA
 
 ### Bước 3: Mở demo
-Sau khi tải source code về máy, mở demo bằng IDE.
 
 ### Bước 4: Kiểm tra Maven
 Đảm bảo file `pom.xml` được load bình thường để project tải đúng các thư viện cần thiết.
