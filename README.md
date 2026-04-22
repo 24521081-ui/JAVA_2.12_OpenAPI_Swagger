@@ -52,3 +52,28 @@ Demo hiện tại gồm các chức năng chính:
   File cấu hình port và giao diện Swagger
 
 ---
+## Tài liệu hướng dẫn
+
+Nhóm **Nhiều Hành** có chuẩn bị thêm tài liệu hướng dẫn chi tiết trong thư mục `docs`:
+
+- [Hướng dẫn cài đặt môi trường](docs/huong-dan-cai-dat-moi-truong.md)
+- [Hướng dẫn test API](docs/huong-dan-test-api.md)
+
+Video tham khảo cài đặt môi trường:
+- [YouTube - Hướng dẫn cài đặt môi trường](https://www.youtube.com/watch?v=5SrMw54iTYA)
+---
+
+## Bộ source code tối thiểu cần dùng
+
+Để chạy project, các thành viên trong nhóm chỉ cần chuẩn bị đúng cấu trúc source code tối thiểu sau:
+
+- `Book.java`
+- `BookController.java`
+- `NewDemoApplication.java`
+- `application.properties`
+- `pom.xml`
+
+Trong đó:
+- 3 file Java là phần code chính của project
+- `application.properties` dùng để cấu hình port và giao diện Swagger
+- `pom.xml` dùng để quản lý thư viện Spring Boot và Swagger
