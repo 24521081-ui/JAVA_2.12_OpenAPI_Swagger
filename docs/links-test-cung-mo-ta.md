@@ -1,7 +1,7 @@
-## Các đường link để test và ý nghĩa của chúng trong đề tài
+## Các đường link để test và mô tả
 
 ### 1. Giao diện Swagger UI
-`http://localhost:8081/swagger-ui.html`
+http://localhost:8081/swagger-ui.html
 
 **Mô tả:**
 - Đây là giao diện chính để xem tài liệu API trên trình duyệt.
@@ -12,7 +12,7 @@
 ---
 
 ### 2. OpenAPI JSON
-`http://localhost:8081/v3/api-docs`
+http://localhost:8081/v3/api-docs
 
 **Mô tả:**
 - Đây là dữ liệu mô tả toàn bộ API ở dạng JSON.
@@ -30,7 +30,7 @@
 ---
 
 ### 3. Lấy toàn bộ danh sách sách
-`GET http://localhost:8081/books`
+GET http://localhost:8081/books
 
 **Mô tả:**
 - Dùng để lấy tất cả sách hiện có trong hệ thống.
@@ -41,7 +41,7 @@
 ---
 
 ### 4. Tra cứu sách theo mã
-`GET http://localhost:8081/books/search?id=B001`
+GET http://localhost:8081/books/search?id=B001
 
 **Mô tả:**
 - Dùng để tra cứu sách theo mã sách.
@@ -52,7 +52,7 @@
 ---
 
 ### 5. Tra cứu sách theo tên sách
-`GET http://localhost:8081/books/search?tenSach=Java`
+GET http://localhost:8081/books/search?tenSach=Java
 
 **Mô tả:**
 - Dùng để tìm sách theo tên sách.
@@ -63,7 +63,7 @@
 ---
 
 ### 6. Tra cứu sách theo tác giả
-`GET http://localhost:8081/books/search?tacGia=Do%20Van%20Nhon`
+GET http://localhost:8081/books/search?tacGia=Do%20Van%20Nhon
 
 **Mô tả:**
 - Dùng để tìm sách theo tên tác giả.
@@ -74,7 +74,7 @@
 ---
 
 ### 7. Tra cứu sách theo thể loại
-`GET http://localhost:8081/books/search?theLoai=Cong%20nghe`
+GET http://localhost:8081/books/search?theLoai=Cong%20nghe
 
 **Mô tả:**
 - Dùng để lọc sách theo thể loại.
@@ -85,7 +85,7 @@
 ---
 
 ### 8. Tra cứu kết hợp nhiều điều kiện
-`GET http://localhost:8081/books/search?tenSach=Java&theLoai=Cong%20nghe`
+GET http://localhost:8081/books/search?tenSach=Java&theLoai=Cong%20nghe
 
 **Mô tả:**
 - Dùng để tra cứu sách theo nhiều điều kiện cùng lúc.
