@@ -57,8 +57,7 @@ Demo hiện tại gồm các chức năng chính:
 Nhóm **Nhiều Hành** có chuẩn bị thêm tài liệu hướng dẫn chi tiết trong thư mục `docs`:
 
 - [Hướng dẫn cài đặt môi trường](docs/huong-dan-cai-dat-moi-truong.md)
-- [Hướng dẫn test API](docs/huong-dan-test-api.md)
-
+- [Hướng dẫn test API](docs/links-test-cung-mo-ta.md)
 Video tham khảo cài đặt môi trường:
 - [YouTube - Hướng dẫn cài đặt môi trường](https://www.youtube.com/watch?v=5SrMw54iTYA)
 ---
