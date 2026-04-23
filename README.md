@@ -11,18 +11,15 @@
 <p align="center"><i>OpenAPI / Swagger integration in Java REST API</i></p>
 
 <p align="center">
-  Đây là seminar/demo của nhóm <b>Nhiều Hành</b>, được thực hiện nhằm tìm hiểu cách tích hợp
-  <b>OpenAPI / Swagger</b> vào ứng dụng <b>Java REST API</b> sử dụng <b>Spring Boot</b>.
+  Đây là <b>seminar/demo</b> của nhóm <b>Nhiều Hành</b> trong môn <b>IS216 - Lập trình JAVA</b>,
+  với chủ đề tích hợp <b>OpenAPI / Swagger</b> vào ứng dụng <b>Java REST API</b> sử dụng <b>Spring Boot</b>.
 </p>
 
 ---
 
-## GIỚI THIỆU NHÓM NHIỀU HÀNH
+## NHÓM THỰC HIỆN
 
-Nhóm **Nhiều Hành** thực hiện seminar này với mục tiêu xây dựng một REST API đơn giản để quản lý sách, đồng thời tích hợp Swagger UI để tự động sinh tài liệu API và hỗ trợ kiểm thử trực tiếp các endpoint.
-
-### Thành viên nhóm
-
+### Thành viên nhóm Nhiều Hành
 | STT | MSSV     | Họ và tên |
 |-----|----------|-----------|
 | 1 | 24520322 | Nguyễn Thành Đức |
@@ -40,8 +37,9 @@ Nhóm **Nhiều Hành** thực hiện seminar này với mục tiêu xây dựng
 
 # JAVA_2.12_OpenAPI_Swagger
 OpenAPI / Swagger integration in Java REST API
+## GIỚI THIỆU DEMO
 
-Đây là demo của nhóm Nhiều Hành nhằm tìm hiểu cách tích hợp OpenAPI / Swagger vào ứng dụng Java REST API sử dụng Spring Boot.
+Demo này được xây dựng nhằm minh họa cách tích hợp **OpenAPI / Swagger** vào một ứng dụng **Java REST API** sử dụng **Spring Boot**.
 
 Mục tiêu của demo:
 - Xây dựng một REST API đơn giản để quản lý sách
