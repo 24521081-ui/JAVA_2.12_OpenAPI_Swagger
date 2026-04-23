@@ -116,13 +116,13 @@ Trong đó:
 - `application.properties` dùng để cấu hình port và giao diện Swagger
 - `pom.xml` dùng để quản lý thư viện Spring Boot và Swagger
 
-## Tụi mình dùng
+## Môi trường nhóm tụi mình sử dụng
 - Java 17
 - Maven (check phiên bản trong pom.xml)
 - Kết nối Internet để tải dependency lần đầu
 
-## Cách chạy
-1. Mở project
-2. Đợi Maven tải dependency
-3. Chạy file DemoApplication.java
-4. Truy cập vào file các docs để test các links
+## Cách chạy demo
+1. Mở project bằng VS Code hoặc IntelliJ IDEA
+2. Đợi Maven tải đầy đủ dependency từ `pom.xml`
+3. Chạy file `DemoApplication.java`
+4. Mở thư mục `docs` để xem hướng dẫn và truy cập các link test API
