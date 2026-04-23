@@ -5,7 +5,7 @@
   </a>
 </p>
 
-<h1 align="center">IS208 - QUẢN LÝ DỰ ÁN CNTT</h1>
+<h1 align="center">IS216 - LẬP TRÌNH JAVA</h1>
 <h2 align="center">SEMINAR NHÓM NHIỀU HÀNH</h2>
 <h3 align="center">JAVA_2.12_OpenAPI_Swagger</h3>
 <p align="center"><i>OpenAPI / Swagger integration in Java REST API</i></p>
