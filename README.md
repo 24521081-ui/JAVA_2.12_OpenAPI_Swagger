@@ -5,12 +5,23 @@
   </a>
 </p>
 
-<h1 align="center"><b>IS216 - Lập Trình Java</b></h1>
+<h1 align="center">IS208 - QUẢN LÝ DỰ ÁN CNTT</h1>
+<h2 align="center">SEMINAR NHÓM NHIỀU HÀNH</h2>
+<h3 align="center">JAVA_2.12_OpenAPI_Swagger</h3>
+<p align="center"><i>OpenAPI / Swagger integration in Java REST API</i></p>
 
-<h2 align="center">JAVA_2.12_OpenAPI_Swagger</h2>
-<h3 align="center">OpenAPI / Swagger integration in Java REST API</h3>
-## THÀNH VIÊN NHÓM NHIỀU HÀNH
+<p align="center">
+  Đây là seminar/demo của nhóm <b>Nhiều Hành</b>, được thực hiện nhằm tìm hiểu cách tích hợp
+  <b>OpenAPI / Swagger</b> vào ứng dụng <b>Java REST API</b> sử dụng <b>Spring Boot</b>.
+</p>
 
+---
+
+## GIỚI THIỆU NHÓM NHIỀU HÀNH
+
+Nhóm **Nhiều Hành** thực hiện seminar này với mục tiêu xây dựng một REST API đơn giản để quản lý sách, đồng thời tích hợp Swagger UI để tự động sinh tài liệu API và hỗ trợ kiểm thử trực tiếp các endpoint.
+
+### Thành viên nhóm
 
 | STT | MSSV     | Họ và tên |
 |-----|----------|-----------|
@@ -22,7 +33,9 @@
 | 6 | 24520986 | Phương Thiên Lộc |
 | 7 | 24521034 | Châu Gia Lương |
 | 8 | 24521081 | Nguyễn Văn Minh |
-| 9 | 24521093 | Nguyễn Thế Mỹ | 
+| 9 | 24521093 | Nguyễn Thế Mỹ |
+
+---
 
 
 # JAVA_2.12_OpenAPI_Swagger
