@@ -4,7 +4,13 @@
     <img src="https://i.imgur.com/WmMnSRt.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology" width="750">
   </a>
 </p>
+
+<h1 align="center"><b>IS216 - Lập Trình Java</b></h1>
+
+<h2 align="center">JAVA_2.12_OpenAPI_Swagger</h2>
+<h3 align="center">OpenAPI / Swagger integration in Java REST API</h3>
 ## THÀNH VIÊN NHÓM NHIỀU HÀNH
+
 
 | STT | MSSV     | Họ và tên |
 |-----|----------|-----------|
