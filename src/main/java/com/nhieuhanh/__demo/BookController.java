@@ -3,33 +3,19 @@ package com.nhieuhanh.__demo;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.web.bind.annotation.*;
-/*này là import rút gọn của các anonotaion của Spring để tạo API như:
-@RestController: dùng để báo cho Spring biết class này là nơi chứa các API REST, nhận request từ trình duyệt Swagger
-@GetMapping: API lấy dữ liệu ra
-@PostMapping: Thêm dữ liệu mới lên server
-@PutMapping: Cập nhật dữ liệu đã có, sửa thông tin
-@DeleteMapping: Xóa dữ liệu
-@RequestParam: Dùng để lấy dữ liệu nằm sau dấu ?. Ví dụ như /books/search?keyword=java&theLoai=Cong nghe thì key word = java và theLoai = Cong nghe. phù hợp với các chức năng tìm kiếm, lọc và truyền các tham số tùy chọn.
-@PathVariable: Dùng để lấy dữ liệu nằm trong đường dẫn. Ví dụ như /books/B001
-@RequestBody: Dùng để lấy dữ liệu người dùng gửi trong phần body của request, thường là JSON, rồi Spring tự đổi dữ liệu đó thành object Java.
-Ví dụ về RequestBody khi mình gọi API POST /books kèm theo thông tin (khối Json) thì đó gọi là request body 
-*/
 
-import io.swagger.v3.oas.annotations.Operation;//Operation: dùng để mô tả một API cụ thể (chú thích cho từng endpoint)
-import io.swagger.v3.oas.annotations.tags.Tag;//Tags: Book API trên Swagger UI
-import io.swagger.v3.oas.annotations.Parameter;//Parameter: dùng để mô tả tham số đầu vào của API
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Parameter;
 
 @RestController
-@RequestMapping("/books") // mặc định đường dẫn gốc là /books
-@Tag(name = "Book API", description = "API quản lý sách") /*
-tags ở đây đang gắn cho cả class, chứ kh phải cho từng
-phương thức, nên là mình sẽ gọp được thêm xóa sửa vào trong
-cụm Book API như trên giao diện swagger
-*/
+@RequestMapping("/books") 
+@Tag(name = "Book API", description = "API quản lý sách")
+
 public class BookController {
 
     private List<Book> books = new ArrayList<>();
-    private int nextId = 21;// tự động tăng id sách nếu user kh nhập id trong phương thức thêm sách
+    private int nextId = 21;
 
     public BookController() {
         books.add(new Book("B001", "Toán rời rạc", "PGS.TS. Đỗ Văn Nhơn", "Toan hoc", true));
@@ -59,11 +45,11 @@ public class BookController {
 
     @GetMapping 
     @Operation(summary = "Lấy danh sách tất cả sách", description = "API dùng để lấy toàn bộ danh sách sách hiện có trong hệ thống.",
-     tags = {"1. Tra cứu sách" })//này chỉ là phần mô tả trên giao diện th
+     tags = {"1. Tra cứu sách" })
     public List<Book> getAllBooks() {
         return books;
-    }//đây là phần in ra danh sách tất cả sách kh cần tham số đầu vào
-
+    }
+    
     @GetMapping("/search")
     @Operation(summary = "Tra cứu sách theo mã, tên sách, tác giả hoặc thể lọai", description = "API dùng để tìm sách theo một hoặc nhiều điều kiện. Nếu không tìm thấy, hệ thống sẽ trả về thông báo phù hợp.", tags = {
             "1. Tra cứu sách" })
@@ -77,16 +63,16 @@ public class BookController {
             @Parameter(description = "Nhập thể loại sách cần lọc", example = "Công nghệ") @RequestParam(required = false) String theLoai) {
 
         List<Book> result = new ArrayList<>();
-        //Danh sách này để chứa các quyền sách thỏa điều kiện tra cứu
-        for (Book book : books)/*Duyệt qua từng quyển sách*/ {
-            boolean dungId = true;//Vì nếu như không nhập ID mà nhập thông tin khác, mặc định là đúng luôn không cần kiểm tra nên chat có gợi ý là để true 
+      
+        for (Book book : books) {
+            boolean dungId = true;
             boolean dungTenSach = true;
             boolean dungTacGia = true;
             boolean dungTheLoai = true;
     
             if (id != null && !id.isEmpty()) {
                 dungId = book.getId().equalsIgnoreCase(id);
-            }//nếu mà nhập id thì mình mới kiểm tra, equalsIgnoreCase hàm so sánh chuỗi mình đã học, bỏ qua chữ hoa hoặc thường
+            }
 
             if (tenSach != null && !tenSach.isEmpty()) {
                 dungTenSach = book.getTenSach().toLowerCase().contains(tenSach.toLowerCase());
@@ -119,12 +105,12 @@ public class BookController {
     @PostMapping
     @Operation(summary = "Thêm sách mới", description = "API dùng để thêm một quyển sách mới vào danh sách. Mã sách được hệ thống tự động tạo, nếu người dùng không nhập id.",
      tags = {"2. Quản lý sách" })
-    public String createBook(@RequestBody Book newBook)/*đây là phần lấy dữ liệu JSON mà người dùng gửi lên trong body chuyển thành object r mang tên là newBook     */ {
-        String newId = String.format("B%03d", nextId);//Tạo mã sách mới theo form B là chữ cái đầu và sau đó là 3 số nguyên 
-        nextId++;//mã sách tự động tăng lên 
+    public String createBook(@RequestBody Book newBook) {
+        String newId = String.format("B%03d", nextId);
+        nextId++;
 
         newBook.setId(newId);
-        books.add(newBook);//lưu vào hệ thống, trước đó chỉ lưu trong biến newBook th
+        books.add(newBook);
 
         return "Thêm sách thành công. Mã sách mới là " + newId + ", tên sách: " + newBook.getTenSach() + ", tác giả: " + newBook.getTacGia();
     }
@@ -138,11 +124,10 @@ public class BookController {
      tags = {"2. Quản lý sách" })
     public String updateBook(
             @Parameter(description = "Nhập mã sách cần cập nhật", example = "B001") @PathVariable String id,
-            @RequestBody Book updatedBook)/*tương tự như trên thì cũng chuyển dữ liệu JSON vào trong biến updatedBook thôi */ {
+            @RequestBody Book updatedBook) {
 
         for (Book book : books) {
             if (book.getId().equalsIgnoreCase(id)) {
-                //sau khi tìm đúng mã sách thì mình cập nhật thông tin
                 book.setTenSach(updatedBook.getTenSach());
                 book.setTacGia(updatedBook.getTacGia());
                 book.setTheLoai(updatedBook.getTheLoai());
