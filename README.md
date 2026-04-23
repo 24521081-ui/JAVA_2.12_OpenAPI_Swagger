@@ -16,12 +16,12 @@
 # JAVA_2.12_OpenAPI_Swagger
 OpenAPI / Swagger integration in Java REST API
 
-Đây là Demo của nhóm Nhiều Hành nhằm tìm hiểu cách tích hợp OpenAPI / Swagger vào ứng dụng Java REST API sử dụng Spring Boot.
+Đây là demo của nhóm Nhiều Hành nhằm tìm hiểu cách tích hợp OpenAPI / Swagger vào ứng dụng Java REST API sử dụng Spring Boot.
 
-Mục tiêu của Demo:
+Mục tiêu của demo:
 - Xây dựng một REST API đơn giản để quản lý sách
 - Tích hợp Swagger UI để tự động sinh tài liệu API
-- Giúp các thành viên trong nhóm dễ xem, dễ test và dễ hiểu các endpoint
+- Giúp mọi người dễ xem, dễ test và dễ hiểu các endpoint
 ---
 
 ## 1. Nội dung chính của Demo
@@ -80,7 +80,7 @@ Video tham khảo cài đặt môi trường:
 
 ## Bộ source code tối thiểu cần dùng
 
-Để chạy project, các thành viên trong nhóm chỉ cần chuẩn bị đúng cấu trúc source code tối thiểu sau:
+Để chạy project, các bạn chỉ cần chuẩn bị đúng cấu trúc source code tối thiểu sau:
 
 - `Book.java`
 - `BookController.java`
@@ -89,7 +89,7 @@ Video tham khảo cài đặt môi trường:
 - `pom.xml`
 
 Trong đó:
-- 3 file Java là phần code chính của project
+- 3 file Java là phần code chính của demo
 - `application.properties` dùng để cấu hình port và giao diện Swagger
 - `pom.xml` dùng để quản lý thư viện Spring Boot và Swagger
 
@@ -97,6 +97,7 @@ Trong đó:
 - Java 17
 - Maven (check phiên bản trong pom.xml)
 - Kết nối Internet để tải dependency lần đầu
+
 ## Cách chạy
 1. Mở project
 2. Đợi Maven tải dependency
