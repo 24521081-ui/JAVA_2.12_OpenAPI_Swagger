@@ -1,93 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Đây là project Maven, Maven sẽ đọc file này để build project -->
+<!-- File pom.xml dùng để Maven quản lý thư viện và build project -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<!-- Hiện tại thì Maven đang dùng phiên bản 4.0.0 -->
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
+    <!-- Kế thừa cấu hình mặc định từ Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.3</version>
+        <relativePath/>
+    </parent>
 
-		<!-- 2 dòng code đầu cho thấy Maven nằm online -->
-		<artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>com.nhieuhanh</groupId>
+    <artifactId>212-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>212-demo</name>
 
-		<version>4.0.3</version>
+    <description>
+        Demo xây dựng REST API bằng Spring Boot và tự động tạo tài liệu API bằng OpenAPI và Swagger UI.
+    </description>
 
-		<!-- Maven có thể tìm parent theo 2 cách đó là trên máy local (file pom khác) và tải từ Maven Repo trên Internet -->
-		<relativePath/>
-	</parent>
+    <properties>
+        <!-- Project sử dụng Java 17 -->
+        <java.version>17</java.version>
+    </properties>
 
-	<!-- tên nhóm mình -->
-	<groupId>com.nhieuhanh</groupId>
+    <dependencies>
 
-	<!-- tên seminar -->
-	<artifactId>212-demo</artifactId>
+        <!-- Thư viện tích hợp OpenAPI / Swagger UI -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.5.0</version>
+        </dependency>
 
-	<!-- version đầu và hệ thống đang phát triển -->
-	<version>0.0.1-SNAPSHOT</version>
+        <!-- Thư viện chính để xây dựng REST API -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+        </dependency>
 
-	<!-- tên hiển thị project -->
-	<name>212-demo</name>
+        <!-- Thư viện hỗ trợ test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-	<description>
-	demo xây dựng REST API bằng Spring Boot và tự động tạo tài liệu API bằng OpenAPI và Swagger UI.
-	</description>
+    </dependencies>
 
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
-
-	<properties>
-		<!-- project sẽ build bằng java 17 -->
-		<java.version>17</java.version>
-	</properties>
-
-	<dependencies>
-
-	<!-- đây là phần ae mình thêm vào -->
-	<dependency>
-  		<groupId>org.springdoc</groupId>
- 		<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-  		<version>2.5.0</version>
-	</dependency>
-
-	<!-- Thư viện này tích hợp Open API, tự sinh tài liệu API, tạo Swagger UI, sau khi chạy project thì ta sẽ có /v3/api-docs -->
-
-		<!-- Thư viện này cung cấp REST API, Controller, HTTP request, Web server -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-	</dependencies>
-
-	<build>
-		<!-- công cụ mở rộng chức năng cho Maven,compile, test, chạy ứng dụng hoặc đóng gói project. -->
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <!-- Plugin hỗ trợ chạy ứng dụng Spring Boot -->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
